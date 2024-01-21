@@ -1,0 +1,633 @@
+<html>
+<title>Zaki's Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="style.css"
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<div class="w3-container">
+    <img src="css/banner.png">
+    <style>
+        .container {
+             width: 2000px;
+             height: 500px;
+             i: 0px solid #000000;
+         }
+         img {
+             width: 1500px;
+             height: 200px;
+         }
+      </style>
+</div>
+<style type=""text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    body{
+        height: 100vh;
+        background-color: transparent;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.itl.cat/pngfile/big/30-303318_dark-tree-wallpaper-light-and-dark-trees.jpg');
+        background-size: cover;
+        background-position: center;
+       
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+    }
+
+    a:hover{
+        color: lightblue;
+    }
+    /* HEADER */
+    header {
+        position: center;
+        padding: 0 2rem;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo{
+        background-color: rgba(35, 19, 83, 0.34);
+        color: white;
+        border-radius: 20px;
+        padding: 1rem 2rem;
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .navbar .links{
+        display: flex;
+        gap: 3rem;
+        color: white;
+        font-size: 1rem;
+        position: center;
+    }
+
+    .navbar .links:hover{
+        scale: 1.05;
+        color:white;
+    }
+
+    .navbar .toggle_btn{
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    .action_btn {
+        background-color: orange;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: scale 0.2 ease;
+    }
+
+    .action_btn:hover{
+        scale: 1.05;
+        color: white;
+    }
+
+    .action_btn:active {
+        scale: 0.95;
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown_menu{
+        position: absolute;
+        right: 2rem;
+        top: 60px;
+        width: 300px;
+        height: 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dropdown_menu.open {
+        height: 240px;
+    }
+
+    .dropdown_menu li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    }
+    .dropdown_menu .action_btn {
+        width: 100%
+        display: flex;
+        justify-content: center;
+    }
+
+    /* HERO */
+    section#hero {
+        height: calc(100vh - 30 px);
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    #hero h1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        margin-center: 1rem;
+    }
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+        .navbar .links,
+        .navbar .action_btn {
+            display: none;
+        }
+
+        .navbar .toggle_btn {
+            display: block;
+        }
+
+        .dropdown_menu {
+            display: block;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .dropdown_menu {
+            left: 2rem;
+            width: unset;
+        }
+    }
+
+    h1{
+        text-align: center;
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+        align-items: center;
+        font-size: 70px;
+    }
+
+    h2{
+        text-align: center;
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+        align-items: center;
+        font-size: 40px;
+    }
+    
+    p{
+        font-size: 20px;
+    }
+    
+    .row{
+        display: flex;
+        height: 120%;
+        align-items: center;
+    }
+    .col{
+        flex-basis: 60%;
+    }
+
+    .card{
+        width: 210px;
+        height: 250px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        cursor: pointer;
+        
+        background: gray; 
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.5;
+    }
+    
+    .card1{
+        background-image: url("css/sm.jpg");
+        margin: 25px 35px;
+    }
+    
+    .card2{
+        background-image: url("css/HEAVEN-235.jpg");
+        margin: 25px 35px;
+    }
+
+    .card3{
+        background-image: url("css/HEAVEN-403.jpg");
+        margin: 25px 35px;
+    }
+
+    .card4{
+        background-image: url("css/shohibul.jpg");
+        margin: 25px 35px;
+    }
+
+    .card:hover{
+        transform: translateY(-10px);
+    }
+
+    h5{
+        color: white
+
+    }
+
+    .kartu1{
+        background-image: url("css/aphpjpeg.jpeg");
+    }
+
+    .kartu2{
+        background-image: url("css/tv.png");
+        
+    }
+
+    .kartu3{
+        background-image: url("css/santri.jpg");
+    }
+
+    .kartu4{
+        background-image: url("css/n.jpeg");
+    }
+
+    .kartu5{
+        background-image: url("css/54_n.jpeg");
+    }
+
+    .kartu6{
+        background-image: url("css/An.jpeg");
+    }
+
+    .kartu7{
+        background-image: url("css/Screenshot 2024-01-19 235959.png");
+    }
+
+    .kartu8{
+        background-image: url("css/Mn.jpeg");
+    }
+
+    .kartu9{
+        background-image: url("css/tn.jpeg");
+    }
+
+    .kartu10{
+        background-image: url("css/49cebee6ce244d8799edd3cd5f8ae260.jpg");
+    }
+
+    .kartu11{
+        background-image: url("css/kak.jpeg");
+    }
+
+    .kartu12{
+        background-image: url("css/HEAVEN-61.jpg");
+    }
+
+    .kartu13{
+        background-image: url("css/on.jpeg");
+    }
+
+    .kartu14{
+        background-image: url("css/redoksonn__1680213370_3070174735440065120_13720252966.webp");
+    }
+
+    .kartu15{
+        background-image: url("css/HEAVEN-547.jpg");
+    }
+
+    .kartu16{
+        background-image: url("css/zn.jpeg");
+    }
+
+    .kartu17{
+        background-image: url("css/AGn.jpeg");
+    }
+
+    .kartu18{
+        background-image: url("css/eten.jpeg");
+    }
+    
+    .biodata{
+        width: 300;
+        height: 350px;
+        background-image: url("css/IMG_20230711_134028_252.jpg");
+    
+    }
+
+    .wrapper .button{
+        display: inline-block;
+        height: 60px;
+        width: 59px;
+        margin: 0 5 px;
+        overflow: hidden;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0px 10px 10px;
+        transition: all;
+        
+    }
+
+    .wrapper .button .icon{
+        display: inline-block;
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        border-radius: 50%;
+        box-sizing: border-box;
+        line-height: 60px;
+        transition: all 0.10s ease-out;
+    }
+
+    .wrapper .button:nth-child(1):hover .icon{
+        background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%, #bc1888 100% );
+    }
+
+    .wrapper .button:nth-child(2):hover .icon{
+        background: #ff0000;
+    }
+
+    .wrapper .button .icon i{
+        font-size: 25px;
+        line-height: 60px;
+        transition: all 0.3s ease-out;
+    }
+    
+    .wrapper .button:hover .icon i{
+        color: white;
+    }
+
+    .wrapper .button span{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-left: 10px;
+        transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button:nth-child(1) span{
+        color: #e1306C;
+    }
+
+    .wrapper .button:nth-child(2) span{
+        color: #ff0000;
+    }
+</style>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"<a href="#">Zaki's Gallery</a></div>
+            <ul class="links">
+    
+                <button class="w3-padding w3-button"
+                       onclick="openKota('Top')">School</button>
+
+                <button class="w3-padding w3-button"
+                        onclick="openKota('Bottom')">Activities</button>
+
+                <button class="w3-padding w3-button"
+                        onclick="openKota('Right')">Organization</button>
+
+                <button class="w3-padding w3-button"
+                        onclick="openKota('Kiri')">About Me</button>
+                
+            </ul>
+            <div class="action_btn">Memories from 2020-2023</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            </div>   
+        </div>
+        
+        <div id="Top" class="w3-container kota w3-animate-top" style="display:none">
+           <div class="row">
+                <div class="col">
+                    <h1>Shohibul Muslimin
+                        <hr>
+                        <p>
+                            My school is an Islamic boarding school that balances knowledge of the world and the afterlife.
+                        </p>
+                    </h1>
+                </div>
+                <div class="col">
+                    
+                    <div class="card card1">
+                        
+                    </div>
+
+                    <div class="card card2">
+                         
+                    </div>
+
+                    <div class="card card3">
+                        
+                    </div>
+                    <div class="card card4">
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Bottom" class="w3-container kota w3-animate-bottom" style="display:none">
+            <div class="row">
+                <div class="col">
+                    <h1>My Activity
+                        <hr>
+                        <p>
+                            It's my daily activity in Boarding School
+                        </p>
+                    </h1>
+                </div>
+                <div class="col">
+
+                    <div class="card kartu1">
+
+                    </div>
+
+                    <div class="card kartu2">
+
+                    </div>
+
+                    <div class="card kartu3">
+
+
+                    </div>
+
+                    <div class="card kartu4">
+
+                    </div>
+
+                    <div class="card kartu5">
+
+                    </div>
+
+                    <div class="card kartu6">
+
+                    </div>
+
+                    <div class="card kartu7">
+
+                    </div>
+
+                    <div class="card kartu8">
+
+                    </div>                    
+
+                    <div class="card kartu9">
+
+                    </div>   
+
+
+                </div>
+            </div>
+        </div>
+
+        <div id="Right" class="w3-container kota w3-animate-right" style="display:none">
+            <div class="row">
+                 <div class="col">
+                    <h1>Organization
+                        <hr>
+                        <p>
+                            OSPM (Organisasi Santri Pondok Modern)
+                        </p>
+                    </h1>
+                </div>
+                <div class="col">
+
+                    <div class="card kartu10">
+
+                    </div>
+
+                    <div class="card kartu11">
+
+                    </div>
+
+                    <div class="card kartu12">
+
+
+                    </div>
+
+                    <div class="card kartu13">
+
+                    </div>
+
+                    <div class="card kartu14">
+
+                    </div>
+
+                    <div class="card kartu15">
+
+                    </div>
+
+                    <div class="card kartu16">
+
+                    </div>
+
+                    <div class="card kartu17">
+
+                    </div>                    
+
+                    <div class="card kartu18">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="Kiri" class="w3-container kota w3-animate-left" style="display:none">
+            <div class="row">
+                <div class="col">
+                    <h2>Zaki Ahmad Zamzami
+                        <p>10123208</p>
+                        <hr>
+                        <div class="wrapper">
+
+                            <div class="button">
+                                <div class="icon"><a href="https://www.instagram.com/zakizamzami._/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </div><span>Instagram</span></a>
+                            </div>
+
+                            <div class="button">
+                                <div class="icon"><a href="https://www.youtube.com/watch?v=JLd09jmEAYA" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </div><span>Youtube</span></a>
+                                    
+                            </div>
+                        </div>
+                    </h2>                             
+                </div>
+
+                <div class="card biodata">
+                    
+                </div>
+
+                
+
+            </div>
+        </div>
+        
+        
+            
+    </header>
+
+    <script>
+        function openKota(namakota) {
+         var i;
+         var x = document.getElementsByClassName("kota");
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none"; 
+         }
+         document.getElementById(namakota).style.display = "block"; 
+        }
+        </script>
+        </body>
+        </html>
+
+    <script>
+        const toggleBtn= document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
